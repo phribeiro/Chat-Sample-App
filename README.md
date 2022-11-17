@@ -1,6 +1,6 @@
 # Chat-Sample-App
-This is sample/starter code for programming assignments in the Distributed Systems course taught by Prof. Fábio M. Costa at UFG (first semester, 2022).
-The app has a very simple client-server architecture. The aim is to identify the limitations/problems/issues and make enhancements at three levels: architectural, non-functional aspects, functional aspects.  
+This is sample/starter code for some programming assignments in the Distributed Systems course taught by Prof. Fábio M. Costa at UFG in 2022.
+The app has a very simple client-server architecture. Students can identify limitations/problems/issues and make enhancements at severaç levels: architectural, non-functional aspects, functional aspects.  
 
 Overall architecture of this first version of the app (discussed in classroom):
 
