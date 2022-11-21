@@ -27,6 +27,7 @@ while True:
         dest_addr = const.registry[dest] # get address of destination in the registry
     except:
         conn.send(pickle.dumps("NACK")) # to do: send a proper error code
+        continue
     else:
         #print("Server: sending Ack to " + src)
         conn.send(pickle.dumps("ACK")) # send ACK to client
