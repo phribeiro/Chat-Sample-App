@@ -3,7 +3,7 @@ import pickle
 import const #- addresses, port numbers etc. (a rudimentary way to replace a proper naming service)
 
 server_sock = socket(AF_INET, SOCK_STREAM) # socket for clients to connect to this server
-server_sock.bind((const.CHAT_SERVER_HOST, const.CHAT_SERVER_PORT))
+server_sock.bind(('0.0.0.0', const.CHAT_SERVER_PORT))
 server_sock.listen(5) # may change if too many clients
 
 print("Chat Server is ready...")
