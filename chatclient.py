@@ -24,22 +24,21 @@ class RecvHandler(threading.Thread):
     return # We need a condition for graceful termination
 
 #
-# Put receiving thread to run
-recv_handler = RecvHandler(client_sock)
-recv_handler.start()
-
-#
 # Configure the address of the local user (name given as the first command-line argument)
 try:
   me = str(sys.argv[1]) # User's name (as registered in the registry. E.g., Alice, Bob, ...)
 except:
   print('Usage: python3 chatclient.py <Username>')
-  
 client_sock = socket(AF_INET, SOCK_STREAM) # socket for server to connect to this client
 #my_ip = const.registry[me][0]   # If using a proper naming service, client should know its
 my_port = const.registry[me][1] # addresses (which it would register in the ns)
 client_sock.bind(('0.0.0.0', my_port)) # NB: AWS instances don't allow binding to their public IP address!
 client_sock.listen(5)
+
+#
+# Put receiving thread to run
+recv_handler = RecvHandler(client_sock)
+recv_handler.start()
 
 #
 # Handle loop for user interaction (in the main thread)
